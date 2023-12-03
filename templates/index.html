@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <form action="/submit" method="post">
+    <form name ="predictionForm" action="/submit" method="post">
         <!-- Input fields for each letter of the alphabet -->
         <label for="inputA">A:</label>
         <input type="text" id="Location" name="Location"  required>
@@ -93,8 +93,38 @@
 
 
         <!-- Submit button -->
-        <input type="submit" value="Submit">
+        <button type="button" onclick="submitForm()">Submit</button>
     </form>
+<!-- 
+    <script>
+        function submitForm() {
+            // Get form data
+            var formData = new FormData(document.getElementById('predictionForm'));
 
+            // Get the redirect path from the hidden input field
+            var redirectPath = formData.get('redirect_path');
+
+            // Remove the hidden input field from the form data
+            formData.delete('redirect_path');
+
+            // Create a new form element to submit the data with a POST request
+            var form = document.createElement('form');
+            form.method = 'post';
+            form.action = redirectPath;
+
+            // Append form data to the new form
+            for (var pair of formData.entries()) {
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = pair[0];
+                input.value = pair[1];
+                form.appendChild(input);
+            }
+
+            // Append the new form to the document and submit it
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script> -->
 </body>
 </html>

@@ -9,7 +9,7 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/submit', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         # Process the form data here
