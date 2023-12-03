@@ -9,6 +9,7 @@ def home():
     return render_template('index.html')
 
 
+
 @app.route('/predict', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -20,10 +21,9 @@ def index():
        'Temp3pm', 'RainToday', 'year', 'month_sin', 'month_cos', 'day_sin',
        'day_cos'])
         input_data= list(map(float, input_data))
-        # Do something with the input_data list
         with open('model.pkl', 'rb') as f:
             model = pickle.load(f)
-        return render_template_string( "Prediction of rain is : " + str(model.predict(input_data)))
+        return "Prediction of rain is : " + str(model.predict(input_data))
     
 
 
