@@ -4,12 +4,12 @@ import pickle
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('index.html')
+# @app.route('/')
+# def home():
+#     return render_template('index.html')
 
 
-@app.route('/submit', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         # Process the form data here
