@@ -1,11 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Flask heroku app."
+    return render_template('./templates/index.html')
 
 if __name__ --"__main__":
     app.run()
