@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    render_template('index.html')
-    return redirect(location="/predict", code=302)
+    return render_template('index.html')
+    # return redirect(location="/predict", code=302)
 
 @app.route('/predict', methods=['GET', 'POST'])
 def index():
