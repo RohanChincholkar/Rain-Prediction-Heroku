@@ -2,7 +2,6 @@ from flask import Flask, render_template,render_template_string, request, redire
 import pickle
 import json
 
-
 app = Flask(__name__)
 
 @app.route('/')
