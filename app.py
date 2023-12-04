@@ -13,12 +13,12 @@ def home():
 def index():
     if request.method == 'POST':
         # Process the form data here
-        input_data = request.form.getlist(['Location', 'MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine',
+        input_data = request.form.listvalues(('Location', 'MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine',
        'WindGustDir', 'WindGustSpeed', 'WindDir9am', 'WindDir3pm',
        'WindSpeed9am', 'WindSpeed3pm', 'Humidity9am', 'Humidity3pm',
        'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am',
        'Temp3pm', 'RainToday', 'year', 'month_sin', 'month_cos', 'day_sin',
-       'day_cos'])
+       'day_cos'))
         input_data= list(map(float, input_data))
         with open('model.pkl', 'rb') as f:
             model = pickle.load(f)
