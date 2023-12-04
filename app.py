@@ -22,9 +22,7 @@ def index():
     #    'day_cos']
         input_data = request.get_json()
         python_dict = json.load(input_data)
-        input_values = [value for key, value in python_dict.items()]
-
-
+        input_values = list({key: request.form[key] for key in request.form})
         input_data= list(map(float, input_values))
         with open('model.pkl', 'rb') as f:
             model = pickle.load(f)
