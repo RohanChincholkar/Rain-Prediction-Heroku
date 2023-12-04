@@ -21,11 +21,11 @@ def index():
     #    'Temp3pm', 'RainToday', 'year', 'month_sin', 'month_cos', 'day_sin',
     #    'day_cos']
         input_data = request.get_json()
-        python_dict = json.loads(input_data)
-        input_data = [value for key, value in python_dict.items()]
+        python_dict = json.load(input_data)
+        input_values = [value for key, value in python_dict.items()]
 
 
-        input_data= list(map(float, input_data))
+        input_data= list(map(float, input_values))
         with open('model.pkl', 'rb') as f:
             model = pickle.load(f)
         return "Prediction of rain is : " + str(model.predict(input_data))
