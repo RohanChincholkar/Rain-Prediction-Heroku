@@ -26,7 +26,7 @@ def index():
         # input_data= list(map(float, input_values))
         with open('model.pkl', 'rb') as f:
             model = pickle.load(f)
-        return "Prediction of rain is : " + str(model.predict(input_data))
+        return "Prediction of rain is : " + str(model.predict(input_values))
     
 
 
