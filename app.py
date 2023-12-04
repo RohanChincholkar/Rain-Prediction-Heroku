@@ -20,8 +20,8 @@ def index():
     #    'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am',
     #    'Temp3pm', 'RainToday', 'year', 'month_sin', 'month_cos', 'day_sin',
     #    'day_cos']
-        input_data = request.get_json()
-        python_dict = json.load(input_data)
+        # input_data = request.get_json()
+        # python_dict = json.load(input_data)
         input_values = list({key: request.form[key] for key in request.form})
         input_data= list(map(float, input_values))
         with open('model.pkl', 'rb') as f:
