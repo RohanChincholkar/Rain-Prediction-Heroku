@@ -23,7 +23,7 @@ def index():
         # input_data = request.get_json()
         # python_dict = json.load(input_data)
         input_values = list({key: request.form[key] for key in request.form})
-        input_data= list(map(float, input_values))
+        # input_data= list(map(float, input_values))
         with open('model.pkl', 'rb') as f:
             model = pickle.load(f)
         return "Prediction of rain is : " + str(model.predict(input_data))
